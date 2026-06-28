@@ -1,5 +1,5 @@
 ---
-title: "Seattle mapas"
+title: "Lima mapas"
 output: 
   flexdashboard::flex_dashboard
 ---
@@ -10,47 +10,52 @@ library(flexdashboard) # always
 
 <!-- links -->
 ```{r}
-map1link="https://github.com/angela-pm/Actividad-2/raw/main/MAPA1.rds"
+map1link="https://github.com/CIENCIA-DE-DATOS-ESPACIALES1/actividad-3/raw/main/MAPA1.rds"
 viz1=url(map1link)
 
-map2link="https://github.com/angela-pm/Actividad-2/raw/main/MAPA2.rds"
+map2link="https://github.com/CIENCIA-DE-DATOS-ESPACIALES1/actividad-3/raw/main/MAPA2.rds"
 viz2=url(map2link)
 
-map3link= "https://github.com/angela-pm/Actividad-2/raw/main/MAPA3.rds"
+map3link= "https://github.com/CIENCIA-DE-DATOS-ESPACIALES1/actividad-3/raw/main/MAPA3.rds"
 viz3=url(map3link)
 
-map4link= "https://github.com/angela-pm/Actividad-2/raw/main/MAPA4.rds"
+map4link= "https://github.com/CIENCIA-DE-DATOS-ESPACIALES1/actividad-3/raw/main/MAPA4.rds"
 viz4=url(map4link)
 ```
 
 ## Sidebar {.sidebar}
 
 
-Los mapas representan un análisis de Seattle
+Los mapas representan un análisis de Lima (4 tipos diferentes de calculo de vecindarios). Este Dashboard visualiza la autocorrelación espacial del IDH 2019 en Lima.
+
+Hallazgos Clave:
+- Los Hot-Spots se concentran en el centro y sur metropolitano.
+- Los Cold-Spots persisten en las periferias y zonas rurales.
+- La Sensibilidad del análisis aumenta al utilizar métodos de ponderación continua (Kernel).
 
 ## Column {.tabset .tabset-fade}
 
 
-### Mapa Seattle
+### Contigüidad Torre (Rook)
 
 ```{r}
 readRDS(viz1)
 ```
 
 
-### Centros educativos de Seattle
+### K-Vecinos Más Cercanos (K=5)
 
 ```{r}
 readRDS(viz2)
 ```
 
-### Estaciones de gasolina de Seattle
+### Banda de Distancia Fija (20km)
 
 ```{r}
 readRDS(viz3)
 ```
 
-### Mapa de las estaciones bien ubicadas, las mal ubicadas y las ubicaciones propuestas.
+### Ponderación Continua (Kernel)
 
 ```{r}
 readRDS(viz4)
