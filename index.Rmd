@@ -1,0 +1,60 @@
+---
+title: "Seattle mapas"
+output: 
+  flexdashboard::flex_dashboard
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard) # always
+```
+
+<!-- links -->
+```{r}
+map1link="https://github.com/angela-pm/Actividad-2/raw/main/MAPA1.rds"
+viz1=url(map1link)
+
+map2link="https://github.com/angela-pm/Actividad-2/raw/main/MAPA2.rds"
+viz2=url(map2link)
+
+map3link= "https://github.com/angela-pm/Actividad-2/raw/main/MAPA3.rds"
+viz3=url(map3link)
+
+map4link= "https://github.com/angela-pm/Actividad-2/raw/main/MAPA4.rds"
+viz4=url(map4link)
+```
+
+## Sidebar {.sidebar}
+
+
+Los mapas representan un análisis de Seattle
+
+## Column {.tabset .tabset-fade}
+
+
+### Mapa Seattle
+
+```{r}
+readRDS(viz1)
+```
+
+
+### Centros educativos de Seattle
+
+```{r}
+readRDS(viz2)
+```
+
+### Estaciones de gasolina de Seattle
+
+```{r}
+readRDS(viz3)
+```
+
+### Mapa de las estaciones bien ubicadas, las mal ubicadas y las ubicaciones propuestas.
+
+```{r}
+readRDS(viz4)
+```
+
+
+
